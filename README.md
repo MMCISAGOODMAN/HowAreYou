@@ -1,5 +1,7 @@
 # How Are You
 
+**中文 | [English](README.en.md)**
+
 **开发者的真实状态，写在 GitHub 上。**
 
 半夜改完一个 bug，关掉编辑器，忽然不知道该把这句话发给谁。  
@@ -13,9 +15,8 @@
 
 **在线看看：** [https://MMCISAGOODMAN.github.io/HowAreYou/](https://MMCISAGOODMAN.github.io/HowAreYou/)
 
-第一次部署前，请到仓库 **Settings → Pages → Source** 选择 **GitHub Actions**。推送到 `master` 后，站点会从 `profiles/` 生成卡片墙。
-
-展示页上可以 **随机遇见** 一位开发者，也可以打开 **[编年史](https://MMCISAGOODMAN.github.io/HowAreYou/year)**，把这一年的句子慢慢读完。
+展示页上可以 **随机遇见** 一位开发者，也可以打开 **[编年史](https://MMCISAGOODMAN.github.io/HowAreYou/year)**
+，把这一年的句子慢慢读完。右上角可切换中 / EN；档案正文保持作者原文。
 
 ---
 
@@ -52,9 +53,10 @@
 
 三步，大约十五分钟。写得随便一点也完全没问题。
 
-1. **打开模板**：[TEMPLATE.md](TEMPLATE.md)，把提示删掉，换成你自己的话。
+1. **打开模板**：[TEMPLATE.md](TEMPLATE.md)（English: [TEMPLATE.en.md](TEMPLATE.en.md)），把提示删掉，换成你自己的话。
 2. **新建文件**：在 `profiles/` 下创建 `@你的GitHubID.md`（例如 `@octocat.md`）。
-3. **提交过来**：发一个 Pull Request。详细点击：[CONTRIBUTING.md](CONTRIBUTING.md)。
+3. **提交过来**：发一个 Pull Request。详细点击：[CONTRIBUTING.md](CONTRIBUTING.md)
+   （English: [CONTRIBUTING.en.md](CONTRIBUTING.en.md)）。
 
 还不熟 Git？也可以[开一个 Issue](https://github.com/MMCISAGOODMAN/HowAreYou/issues/new)，把填好的内容贴进去，维护者会帮你放进仓库。
 
@@ -74,12 +76,6 @@
 
 ---
 
-## 以后会变成什么样
-
-卡片墙、随机遇见、分享图和年度编年史已经在展示页上；欢迎机器人和仓库巡检走 GitHub Actions。
-
----
-
 ## 写下状态的人
 
 <!-- contributors:start -->
@@ -90,7 +86,7 @@
   [@MMCISAGOODMAN](https://github.com/MMCISAGOODMAN)
 </p>
 <p align="center">
-  <sub>氛围示例（可删）：@cors-afternoon · @three-months</sub>
+  <sub>氛围示例：@cors-afternoon · @three-months</sub>
 </p>
 <!-- contributors:end -->
 

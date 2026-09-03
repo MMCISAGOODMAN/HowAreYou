@@ -139,3 +139,28 @@
 **导语**
 
 此刻的一本。不是年终总结，是这一年里，普通开发者愿意被看见的那些句子。
+
+---
+
+## 大数据卡片墙
+
+- 每页 24 张；工具栏下显示「已显示 {shown} / 共 {total}」
+- 底部「加载更多」；筛选或搜索变化时页码重置为 1
+- 全部加载完后显示「已经到底了」
+
+---
+
+## English UI copy
+
+| Key area           | English                                                                           |
+|--------------------|-----------------------------------------------------------------------------------|
+| Hero title         | How are you, lately?                                                              |
+| Primary CTA        | Leave my status                                                                   |
+| Secondary CTA      | Browse others first                                                               |
+| Random             | Meet someone at random                                                            |
+| Filters            | All / Just started / Been at it for years / Recent small win / A bit stuck lately |
+| Search placeholder | Search a name, or a line you’ve lived too                                         |
+| Showing            | Showing {shown} of {total}                                                        |
+| Load more          | Load more                                                                         |
+| End                | That’s all for now                                                                |
+| Stats title        | You are not the only one.                                                         |

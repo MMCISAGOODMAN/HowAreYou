@@ -38,7 +38,7 @@
 
 ### 4. 把模板贴进去，换成你的话
 
-打开 [TEMPLATE.md](TEMPLATE.md)，整份复制到新文件里。把方括号提示删掉，按问题写自己的答案。
+打开 [TEMPLATE.md](TEMPLATE.md)（English: [TEMPLATE.en.md](TEMPLATE.en.md)），整份复制到新文件里。把方括号提示删掉，按问题写自己的答案。
 
 写得随便一点完全没问题。拼写、标点、要不要留示例句，都不构成「不合格」。
 
@@ -69,7 +69,7 @@
 
 ## 方式二：用 Issue（不会 Git 也行）
 
-1. 打开 [TEMPLATE.md](TEMPLATE.md)，在本地记事本或任何地方填好。
+1. 打开 [TEMPLATE.md](TEMPLATE.md)（或 [TEMPLATE.en.md](TEMPLATE.en.md)），在本地记事本或任何地方填好。
 2. 到仓库开一个新 Issue：https://github.com/MMCISAGOODMAN/HowAreYou/issues/new
 3. 标题写：`[profile] @你的GitHubID`
 4. 正文把填好的内容整段贴进去。

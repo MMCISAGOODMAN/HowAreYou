@@ -1,10 +1,21 @@
-import { Link } from 'react-router-dom'
-import { Badges } from './Badges'
-import { Footer } from './Footer'
-import { CURRENT_YEAR, githubAvatarUrl } from './constants'
-import type { Profile } from './types'
+/*
+ * YearPage.tsx
+ *
+ * Created on 2026-09-03
+ *
+ * Copyright (C) 2026 Volkswagen AG, All rights reserved.
+ */
+
+import {Link} from 'react-router-dom'
+import {Badges} from './Badges'
+import {Footer} from './Footer'
+import {LanguageSwitch} from './LanguageSwitch'
+import {CURRENT_YEAR, githubAvatarUrl} from './constants'
+import {useLocale} from './i18n/LocaleContext'
+import type {Profile} from './types'
 
 export function YearPage({ profiles }: { profiles: Profile[] }) {
+    const {t} = useLocale()
   const touchedThisYear = profiles.filter((p) => p.updatedYears.includes(CURRENT_YEAR))
   const rest = [...profiles].sort((a, b) => {
     const ay = a.year ?? 9999
@@ -15,17 +26,18 @@ export function YearPage({ profiles }: { profiles: Profile[] }) {
 
   return (
     <div className="page">
+        <LanguageSwitch/>
       <main className="chronicle">
         <Link className="back" to="/">
-          ← 回到卡片墙
+            {t('backToWall')}
         </Link>
         <p className="brand">{CURRENT_YEAR}</p>
-        <h1>{CURRENT_YEAR} 编年史</h1>
-        <p className="lede">此刻的一本。不是年终总结，是这一年里，普通开发者愿意被看见的那些句子。</p>
+          <h1>{t('yearTitle', {year: CURRENT_YEAR})}</h1>
+          <p className="lede">{t('yearLede')}</p>
 
         {touchedThisYear.length > 0 ? (
           <section className="chronicle-block">
-            <h2>今年还回来改过自己的人</h2>
+              <h2>{t('yearTouched')}</h2>
             <ol>
               {touchedThisYear.map((profile) => (
                 <li key={`y-${profile.id}`}>
@@ -35,12 +47,11 @@ export function YearPage({ profiles }: { profiles: Profile[] }) {
               ))}
             </ol>
           </section>
-        ) : (
-          <p className="hint">git 历史还太短，或本地没有完整提交记录——下面是此刻墙上的全部状态。</p>
+        ) : (<p className="hint">{t('yearHint')}</p>
         )}
 
         <section className="chronicle-block">
-          <h2>所有留下的话</h2>
+            <h2>{t('yearAll')}</h2>
           <ol className="chronicle-list">
             {rest.map((profile) => (
               <li key={profile.id}>
@@ -57,7 +68,7 @@ export function YearPage({ profiles }: { profiles: Profile[] }) {
                     loading="lazy"
                   />
                   @{profile.id}
-                  {profile.year ? ` · ${profile.year} 年入行` : ''}
+                    {profile.year ? ` · ${t('startedIn', {year: profile.year})}` : ''}
                 </p>
                 <Badges profile={profile} />
               </li>
