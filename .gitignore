@@ -1,0 +1,9 @@
+node_modules
+dist
+.DS_Store
+*.log
+.vite
+.idea
+site/src/data/profiles.json
+site/public/og.png
+site/public/stats.json

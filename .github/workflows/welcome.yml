@@ -1,0 +1,74 @@
+name: Welcome
+
+on:
+  pull_request:
+    types: [closed]
+    paths:
+      - 'profiles/**'
+
+permissions:
+  pull-requests: write
+  issues: write
+
+jobs:
+  welcome:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const owner = context.repo.owner
+            const repo = context.repo.repo
+            const pull_number = context.payload.pull_request.number
+            const files = await github.paginate(github.rest.pulls.listFiles, { owner, repo, pull_number })
+            const ids = [...new Set(
+              files
+                .filter((f) => f.status !== 'removed' && /^profiles\/@[A-Za-z0-9-]+\.md$/.test(f.filename))
+                .map((f) => f.filename.replace(/^profiles\/@/, '').replace(/\.md$/, ''))
+            )]
+            if (!ids.length) return
+
+            const labels = await github.rest.issues.listLabelsForRepo({ owner, repo, per_page: 100 })
+            if (!labels.data.some((l) => l.name === 'saw')) {
+              await github.rest.issues.createLabel({
+                owner,
+                repo,
+                name: 'saw',
+                color: 'c45c26',
+                description: '看见了：路过的人用 👀 打个招呼',
+              })
+            }
+
+            const site = `https://${owner}.github.io/${repo}/`
+            await github.rest.issues.createComment({
+              owner,
+              repo,
+              issue_number: pull_number,
+              body: [
+                '欢迎把此刻写进来。你已经出现在这本开源编年史里了。',
+                '',
+                '以后想更新，改你自己的那份 `profiles/@你的ID.md` 再提一个 PR 就行，不必新开文件。',
+                '',
+                `[参与指南](https://github.com/${owner}/${repo}/blob/master/CONTRIBUTING.md) · [展示页](${site})`,
+              ].join('\n'),
+            })
+
+            for (const id of ids) {
+              const title = `看见了 @${id}`
+              const q = `repo:${owner}/${repo} is:issue label:saw in:title ${title}`
+              const found = await github.rest.search.issuesAndPullRequests({ q })
+              if (found.data.items.some((it) => it.title === title)) continue
+              await github.rest.issues.create({
+                owner,
+                repo,
+                title,
+                labels: ['saw'],
+                body: [
+                  `路过的人可以在下面点个 👀，让 @${id} 知道有人读到了。`,
+                  '',
+                  `- 档案：[\`profiles/@${id}.md\`](https://github.com/${owner}/${repo}/blob/master/profiles/@${id}.md)`,
+                  `- 展示页：[${site}p/${id}](${site}p/${id})`,
+                ].join('\n'),
+              })
+            }
