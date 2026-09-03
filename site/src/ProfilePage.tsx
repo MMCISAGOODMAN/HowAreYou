@@ -2,7 +2,7 @@ import { Link, useParams } from 'react-router-dom'
 import { useState } from 'react'
 import { Badges } from './Badges'
 import { Footer } from './Footer'
-import { githubAvatarUrl, githubUserUrl, quoteText, sawCopyText, sawIssueSearchUrl } from './constants'
+import { githubAvatarUrl, githubUserUrl, quoteText, sawCopyText, sawIssueOpenUrl } from './constants'
 import { downloadShareCard } from './shareCard'
 import type { Profile } from './types'
 
@@ -59,7 +59,8 @@ export function ProfilePage({ profiles }: { profiles: Profile[] }) {
     }
     localStorage.setItem(SAW_KEY(person.id), '1')
     setSawMine(true)
-    window.open(sawIssueSearchUrl(person.id), '_blank', 'noreferrer')
+    setCopied(person.sawIssueUrl ? '已复制。打开 Issue，点个 👀 就好。' : '已复制。打开新建页提交后，再点个 👀。')
+    window.open(sawIssueOpenUrl(person), '_blank', 'noopener,noreferrer')
   }
 
   const sawLabel =
@@ -100,7 +101,9 @@ export function ProfilePage({ profiles }: { profiles: Profile[] }) {
           </button>
         </div>
         {copied ? <p className="flash">{copied}</p> : null}
-        <p className="saw-hint">点「看见了」会复制一句短话，并打开对应 Issue，用 👀 轻轻打个招呼。</p>
+        <p className="saw-hint">
+          点「看见了」会复制一句短话，并打开对应的 GitHub Issue；还没有的话会帮你打开新建页。提交后点 👀 轻轻打个招呼。
+        </p>
         {FIELDS.map(({ key, label }) => {
           const value = person[key]
           if (typeof value !== 'string' || !value) return null

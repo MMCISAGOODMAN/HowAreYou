@@ -96,43 +96,45 @@ function stillHere(years) {
   return earliest < CURRENT_YEAR && years.includes(CURRENT_YEAR)
 }
 
-async function fetchSawCounts() {
-  const repo = process.env.GITHUB_REPOSITORY
+async function fetchSawMeta() {
+  const repo = process.env.GITHUB_REPOSITORY || 'MMCISAGOODMAN/HowAreYou'
   const token = process.env.GITHUB_TOKEN
-  /** @type {Record<string, number>} */
-  const counts = {}
-  if (!repo || !token) return counts
+  /** @type {Record<string, { count: number, url: string | null }>} */
+  const meta = {}
+  const headers = {
+    Accept: 'application/vnd.github+json',
+    'X-GitHub-Api-Version': '2022-11-28',
+    'User-Agent': 'how-are-you-build',
+  }
+  if (token) headers.Authorization = `Bearer ${token}`
 
   try {
     const url = `https://api.github.com/repos/${repo}/issues?labels=saw&state=open&per_page=100`
-    const res = await fetch(url, {
-      headers: {
-        Accept: 'application/vnd.github+json',
-        Authorization: `Bearer ${token}`,
-        'X-GitHub-Api-Version': '2022-11-28',
-        'User-Agent': 'how-are-you-build',
-      },
-    })
-    if (!res.ok) return counts
+    const res = await fetch(url, { headers })
+    if (!res.ok) return meta
     const issues = await res.json()
-    if (!Array.isArray(issues)) return counts
+    if (!Array.isArray(issues)) return meta
     for (const issue of issues) {
       const match = String(issue.title || '').match(/看见了\s+@([A-Za-z0-9-]+)/)
       if (!match) continue
-      counts[match[1]] = Number(issue.reactions?.eyes ?? 0)
+      meta[match[1]] = {
+        count: Number(issue.reactions?.eyes ?? 0),
+        url: issue.html_url || null,
+      }
     }
   } catch {
-    return counts
+    return meta
   }
-  return counts
+  return meta
 }
 
-function parseProfile(filename, markdown, sawCounts) {
+function parseProfile(filename, markdown, sawMeta) {
   const id = filename.replace(/^@/, '').replace(/\.md$/, '')
   const fields = parseSections(markdown)
   const year = parseYear(fields.startedAt)
   const yearsExperience = year === null ? null : CURRENT_YEAR - year
   const years = commitYears(filename)
+  const saw = sawMeta[id] || { count: 0, url: null }
 
   return {
     id,
@@ -153,7 +155,8 @@ function parseProfile(filename, markdown, sawCounts) {
       stillHere: stillHere(years),
     },
     updatedYears: years,
-    sawCount: sawCounts[id] ?? 0,
+    sawCount: saw.count,
+    sawIssueUrl: saw.url,
   }
 }
 
@@ -165,9 +168,9 @@ async function main() {
     files = []
   }
 
-  const sawCounts = await fetchSawCounts()
+  const sawMeta = await fetchSawMeta()
   const profiles = files
-    .map((name) => parseProfile(name, readFileSync(join(profilesDir, name), 'utf8'), sawCounts))
+    .map((name) => parseProfile(name, readFileSync(join(profilesDir, name), 'utf8'), sawMeta))
     .sort((a, b) => a.id.localeCompare(b.id, 'en'))
 
   mkdirSync(dirname(outFile), { recursive: true })
