@@ -177,6 +177,7 @@ async function main() {
   writeFileSync(outFile, `${JSON.stringify(profiles, null, 2)}\n`)
   writeStats(profiles)
   updateReadmeBadges(profiles)
+  updateReadmeContributors(profiles)
   console.log(`Wrote ${profiles.length} profile(s) to ${outFile}`)
 }
 
@@ -232,6 +233,52 @@ function updateReadmeBadges(profiles) {
   if (next !== readme) {
     writeFileSync(readmePath, next)
     console.log('Updated README stats badges')
+  }
+}
+
+const SAMPLE_IDS = new Set(['cors-afternoon', 'three-months'])
+
+function updateReadmeContributors(profiles) {
+  const readmePath = join(repoRoot, 'README.md')
+  const readme = readFileSync(readmePath, 'utf8')
+  const people = profiles.filter((p) => !SAMPLE_IDS.has(p.id))
+  const samples = profiles.filter((p) => SAMPLE_IDS.has(p.id))
+
+  let inner
+  if (people.length === 0 && samples.length === 0) {
+    inner = `<p align="center">\n  <sub>还没有人。这很好：说明你来得正好。</sub>\n</p>`
+  } else {
+    const avatars = (list) =>
+      list
+        .map(
+          (p) =>
+            `<a href="https://github.com/${p.id}" title="@${p.id}"><img src="https://avatars.githubusercontent.com/${p.id}?s=96" width="48" height="48" alt="@${p.id}" /></a>`,
+        )
+        .join('\n  ')
+    const parts = []
+    if (people.length) {
+      parts.push(`<p align="center">\n  ${avatars(people)}\n</p>`)
+      parts.push(
+        `<p align="center">\n  ${people.map((p) => `[@${p.id}](https://github.com/${p.id})`).join(' · ')}\n</p>`,
+      )
+    }
+    if (samples.length) {
+      parts.push(
+        `<p align="center">\n  <sub>氛围示例（可删）：${samples.map((p) => `@${p.id}`).join(' · ')}</sub>\n</p>`,
+      )
+    }
+    inner = parts.join('\n')
+  }
+
+  const block = `<!-- contributors:start -->\n${inner}\n<!-- contributors:end -->`
+  if (!readme.includes('<!-- contributors:start -->')) {
+    console.warn('README missing contributors markers; skip')
+    return
+  }
+  const next = readme.replace(/<!-- contributors:start -->[\s\S]*?<!-- contributors:end -->/, block)
+  if (next !== readme) {
+    writeFileSync(readmePath, next)
+    console.log('Updated README contributors')
   }
 }
 
