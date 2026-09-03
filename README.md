@@ -41,10 +41,10 @@
 数字来自 `profiles/`，有人新写下状态、合并进仓库之后会跟着变。还没有人时显示 `--`。
 
 <!-- stats-badges:start -->
-![参与者](https://img.shields.io/static/v1?label=%E5%8F%82%E4%B8%8E%E8%80%85&message=3%20%E4%BD%8D&color=0ea5e9)
-![平均入行](https://img.shields.io/static/v1?label=%E5%B9%B3%E5%9D%87%E5%85%A5%E8%A1%8C&message=4.7%20%E5%B9%B4&color=6366f1)
-![最近有点卡住](https://img.shields.io/static/v1?label=%E6%9C%80%E8%BF%91%E6%9C%89%E7%82%B9%E5%8D%A1%E4%BD%8F&message=3%20%E4%BA%BA&color=f59e0b)
-![还在热爱](https://img.shields.io/static/v1?label=%E8%BF%98%E5%9C%A8%E7%83%AD%E7%88%B1&message=3%20%E4%BA%BA&color=10b981)
+![参与者](https://img.shields.io/static/v1?label=%E5%8F%82%E4%B8%8E%E8%80%85&message=523%20%E4%BD%8D&color=0ea5e9)
+![平均入行](https://img.shields.io/static/v1?label=%E5%B9%B3%E5%9D%87%E5%85%A5%E8%A1%8C&message=6.3%20%E5%B9%B4&color=6366f1)
+![最近有点卡住](https://img.shields.io/static/v1?label=%E6%9C%80%E8%BF%91%E6%9C%89%E7%82%B9%E5%8D%A1%E4%BD%8F&message=523%20%E4%BA%BA&color=f59e0b)
+![还在热爱](https://img.shields.io/static/v1?label=%E8%BF%98%E5%9C%A8%E7%83%AD%E7%88%B1&message=523%20%E4%BA%BA&color=10b981)
 <!-- stats-badges:end -->
 
 ---
@@ -80,10 +80,57 @@
 
 <!-- contributors:start -->
 <p align="center">
-  <a href="https://github.com/MMCISAGOODMAN" title="@MMCISAGOODMAN"><img src="https://avatars.githubusercontent.com/MMCISAGOODMAN?s=96" width="48" height="48" alt="@MMCISAGOODMAN" /></a>
+  <a href="https://github.com/bold-cache-182" title="@bold-cache-182"><img src="https://avatars.githubusercontent.com/bold-cache-182?s=96" width="48" height="48" alt="@bold-cache-182" /></a>
+  <a href="https://github.com/bold-cache-213" title="@bold-cache-213"><img src="https://avatars.githubusercontent.com/bold-cache-213?s=96" width="48" height="48" alt="@bold-cache-213" /></a>
+  <a href="https://github.com/bold-cache-492" title="@bold-cache-492"><img src="https://avatars.githubusercontent.com/bold-cache-492?s=96" width="48" height="48" alt="@bold-cache-492" /></a>
+  <a href="https://github.com/bold-dock-273" title="@bold-dock-273"><img src="https://avatars.githubusercontent.com/bold-dock-273?s=96" width="48" height="48" alt="@bold-dock-273" /></a>
+  <a href="https://github.com/bold-dock-288" title="@bold-dock-288"><img src="https://avatars.githubusercontent.com/bold-dock-288?s=96" width="48" height="48" alt="@bold-dock-288" /></a>
+  <a href="https://github.com/bold-draft-250" title="@bold-draft-250"><img src="https://avatars.githubusercontent.com/bold-draft-250?s=96" width="48" height="48" alt="@bold-draft-250" /></a>
+  <a href="https://github.com/bold-dusk-134" title="@bold-dusk-134"><img src="https://avatars.githubusercontent.com/bold-dusk-134?s=96" width="48" height="48" alt="@bold-dusk-134" /></a>
+  <a href="https://github.com/bold-dusk-360" title="@bold-dusk-360"><img src="https://avatars.githubusercontent.com/bold-dusk-360?s=96" width="48" height="48" alt="@bold-dusk-360" /></a>
+  <a href="https://github.com/bold-dusk-403" title="@bold-dusk-403"><img src="https://avatars.githubusercontent.com/bold-dusk-403?s=96" width="48" height="48" alt="@bold-dusk-403" /></a>
+  <a href="https://github.com/bold-fox-330" title="@bold-fox-330"><img src="https://avatars.githubusercontent.com/bold-fox-330?s=96" width="48" height="48" alt="@bold-fox-330" /></a>
+  <a href="https://github.com/bold-lane-091" title="@bold-lane-091"><img src="https://avatars.githubusercontent.com/bold-lane-091?s=96" width="48" height="48" alt="@bold-lane-091" /></a>
+  <a href="https://github.com/bold-leaf-490" title="@bold-leaf-490"><img src="https://avatars.githubusercontent.com/bold-leaf-490?s=96" width="48" height="48" alt="@bold-leaf-490" /></a>
+  <a href="https://github.com/bold-moss-237" title="@bold-moss-237"><img src="https://avatars.githubusercontent.com/bold-moss-237?s=96" width="48" height="48" alt="@bold-moss-237" /></a>
+  <a href="https://github.com/bold-moss-274" title="@bold-moss-274"><img src="https://avatars.githubusercontent.com/bold-moss-274?s=96" width="48" height="48" alt="@bold-moss-274" /></a>
+  <a href="https://github.com/bold-pixel-004" title="@bold-pixel-004"><img src="https://avatars.githubusercontent.com/bold-pixel-004?s=96" width="48" height="48" alt="@bold-pixel-004" /></a>
+  <a href="https://github.com/bold-pixel-056" title="@bold-pixel-056"><img src="https://avatars.githubusercontent.com/bold-pixel-056?s=96" width="48" height="48" alt="@bold-pixel-056" /></a>
+  <a href="https://github.com/bold-pixel-099" title="@bold-pixel-099"><img src="https://avatars.githubusercontent.com/bold-pixel-099?s=96" width="48" height="48" alt="@bold-pixel-099" /></a>
+  <a href="https://github.com/bold-quill-061" title="@bold-quill-061"><img src="https://avatars.githubusercontent.com/bold-quill-061?s=96" width="48" height="48" alt="@bold-quill-061" /></a>
+  <a href="https://github.com/bold-quill-079" title="@bold-quill-079"><img src="https://avatars.githubusercontent.com/bold-quill-079?s=96" width="48" height="48" alt="@bold-quill-079" /></a>
+  <a href="https://github.com/bold-quill-181" title="@bold-quill-181"><img src="https://avatars.githubusercontent.com/bold-quill-181?s=96" width="48" height="48" alt="@bold-quill-181" /></a>
+  <a href="https://github.com/bold-quill-267" title="@bold-quill-267"><img src="https://avatars.githubusercontent.com/bold-quill-267?s=96" width="48" height="48" alt="@bold-quill-267" /></a>
+  <a href="https://github.com/bold-reef-414" title="@bold-reef-414"><img src="https://avatars.githubusercontent.com/bold-reef-414?s=96" width="48" height="48" alt="@bold-reef-414" /></a>
+  <a href="https://github.com/bold-spark-039" title="@bold-spark-039"><img src="https://avatars.githubusercontent.com/bold-spark-039?s=96" width="48" height="48" alt="@bold-spark-039" /></a>
+  <a href="https://github.com/bold-spark-205" title="@bold-spark-205"><img src="https://avatars.githubusercontent.com/bold-spark-205?s=96" width="48" height="48" alt="@bold-spark-205" /></a>
+  <a href="https://github.com/bold-spark-297" title="@bold-spark-297"><img src="https://avatars.githubusercontent.com/bold-spark-297?s=96" width="48" height="48" alt="@bold-spark-297" /></a>
+  <a href="https://github.com/bold-wave-238" title="@bold-wave-238"><img src="https://avatars.githubusercontent.com/bold-wave-238?s=96" width="48" height="48" alt="@bold-wave-238" /></a>
+  <a href="https://github.com/brisk-byte-027" title="@brisk-byte-027"><img src="https://avatars.githubusercontent.com/brisk-byte-027?s=96" width="48" height="48" alt="@brisk-byte-027" /></a>
+  <a href="https://github.com/brisk-byte-347" title="@brisk-byte-347"><img src="https://avatars.githubusercontent.com/brisk-byte-347?s=96" width="48" height="48" alt="@brisk-byte-347" /></a>
+  <a href="https://github.com/brisk-byte-452" title="@brisk-byte-452"><img src="https://avatars.githubusercontent.com/brisk-byte-452?s=96" width="48" height="48" alt="@brisk-byte-452" /></a>
+  <a href="https://github.com/brisk-cache-104" title="@brisk-cache-104"><img src="https://avatars.githubusercontent.com/brisk-cache-104?s=96" width="48" height="48" alt="@brisk-cache-104" /></a>
+  <a href="https://github.com/brisk-cache-333" title="@brisk-cache-333"><img src="https://avatars.githubusercontent.com/brisk-cache-333?s=96" width="48" height="48" alt="@brisk-cache-333" /></a>
+  <a href="https://github.com/brisk-cache-444" title="@brisk-cache-444"><img src="https://avatars.githubusercontent.com/brisk-cache-444?s=96" width="48" height="48" alt="@brisk-cache-444" /></a>
+  <a href="https://github.com/brisk-dawn-423" title="@brisk-dawn-423"><img src="https://avatars.githubusercontent.com/brisk-dawn-423?s=96" width="48" height="48" alt="@brisk-dawn-423" /></a>
+  <a href="https://github.com/brisk-dock-260" title="@brisk-dock-260"><img src="https://avatars.githubusercontent.com/brisk-dock-260?s=96" width="48" height="48" alt="@brisk-dock-260" /></a>
+  <a href="https://github.com/brisk-draft-391" title="@brisk-draft-391"><img src="https://avatars.githubusercontent.com/brisk-draft-391?s=96" width="48" height="48" alt="@brisk-draft-391" /></a>
+  <a href="https://github.com/brisk-dusk-157" title="@brisk-dusk-157"><img src="https://avatars.githubusercontent.com/brisk-dusk-157?s=96" width="48" height="48" alt="@brisk-dusk-157" /></a>
+  <a href="https://github.com/brisk-dusk-246" title="@brisk-dusk-246"><img src="https://avatars.githubusercontent.com/brisk-dusk-246?s=96" width="48" height="48" alt="@brisk-dusk-246" /></a>
+  <a href="https://github.com/brisk-kite-249" title="@brisk-kite-249"><img src="https://avatars.githubusercontent.com/brisk-kite-249?s=96" width="48" height="48" alt="@brisk-kite-249" /></a>
+  <a href="https://github.com/brisk-lane-029" title="@brisk-lane-029"><img src="https://avatars.githubusercontent.com/brisk-lane-029?s=96" width="48" height="48" alt="@brisk-lane-029" /></a>
+  <a href="https://github.com/brisk-lane-090" title="@brisk-lane-090"><img src="https://avatars.githubusercontent.com/brisk-lane-090?s=96" width="48" height="48" alt="@brisk-lane-090" /></a>
+  <a href="https://github.com/brisk-lane-154" title="@brisk-lane-154"><img src="https://avatars.githubusercontent.com/brisk-lane-154?s=96" width="48" height="48" alt="@brisk-lane-154" /></a>
+  <a href="https://github.com/brisk-lane-172" title="@brisk-lane-172"><img src="https://avatars.githubusercontent.com/brisk-lane-172?s=96" width="48" height="48" alt="@brisk-lane-172" /></a>
+  <a href="https://github.com/brisk-leaf-129" title="@brisk-leaf-129"><img src="https://avatars.githubusercontent.com/brisk-leaf-129?s=96" width="48" height="48" alt="@brisk-leaf-129" /></a>
+  <a href="https://github.com/brisk-leaf-277" title="@brisk-leaf-277"><img src="https://avatars.githubusercontent.com/brisk-leaf-277?s=96" width="48" height="48" alt="@brisk-leaf-277" /></a>
+  <a href="https://github.com/brisk-node-415" title="@brisk-node-415"><img src="https://avatars.githubusercontent.com/brisk-node-415?s=96" width="48" height="48" alt="@brisk-node-415" /></a>
+  <a href="https://github.com/brisk-node-520" title="@brisk-node-520"><img src="https://avatars.githubusercontent.com/brisk-node-520?s=96" width="48" height="48" alt="@brisk-node-520" /></a>
+  <a href="https://github.com/brisk-oak-345" title="@brisk-oak-345"><img src="https://avatars.githubusercontent.com/brisk-oak-345?s=96" width="48" height="48" alt="@brisk-oak-345" /></a>
+  <a href="https://github.com/brisk-oak-455" title="@brisk-oak-455"><img src="https://avatars.githubusercontent.com/brisk-oak-455?s=96" width="48" height="48" alt="@brisk-oak-455" /></a>
 </p>
 <p align="center">
-  [@MMCISAGOODMAN](https://github.com/MMCISAGOODMAN)
+  <sub>展示 48 / 共 521 人。完整名单在展示页。</sub>
 </p>
 <p align="center">
   <sub>氛围示例：@cors-afternoon · @three-months</sub>
