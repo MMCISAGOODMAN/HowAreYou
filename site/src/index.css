@@ -1,3 +1,11 @@
+/*
+ * index.css
+ *
+ * Created on 2026-09-03
+ *
+ * Copyright (C) 2026 Volkswagen AG, All rights reserved.
+ */
+
 :root {
   --bg: #f4efe6;
   --paper: #fffcf7;
@@ -43,6 +51,50 @@ a {
   max-width: 1080px;
   margin: 0 auto;
   padding: 2.5rem 1.25rem 3rem;
+    position: relative;
+}
+
+.lang-switch {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: var(--muted);
+    font-size: 0.85rem;
+    z-index: 2;
+}
+
+.lang-btn {
+    border: 0;
+    background: transparent;
+    color: var(--muted);
+    font: inherit;
+    cursor: pointer;
+    padding: 0.15rem 0.2rem;
+}
+
+.lang-btn.on {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.wall-count {
+    color: var(--muted);
+    font-size: 0.92rem;
+    margin: 0 0 1rem;
+}
+
+.wall-more {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.wall-end {
+    color: var(--muted);
+    margin: 0;
 }
 
 .hero {

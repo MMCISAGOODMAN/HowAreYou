@@ -1,20 +1,30 @@
-import { Link } from 'react-router-dom'
-import { CONTRIBUTING_URL, CURRENT_YEAR, REPO_URL } from './constants'
+/*
+ * Footer.tsx
+ *
+ * Created on 2026-09-03
+ *
+ * Copyright (C) 2026 Volkswagen AG, All rights reserved.
+ */
+
+import {Link} from 'react-router-dom'
+import {contributingUrl, CURRENT_YEAR, REPO_URL} from './constants'
+import {useLocale} from './i18n/LocaleContext'
 
 export function Footer() {
+    const {t, locale} = useLocale()
   return (
     <footer className="site-footer">
-      <p className="footer-main">普通开发者的真实状态，正在变成一本开源编年史。</p>
+        <p className="footer-main">{t('footerMain')}</p>
       <p className="footer-links">
-        <a href={REPO_URL}>在 GitHub 上参与</a>
+          <a href={REPO_URL}>{t('footerJoin')}</a>
         <span aria-hidden="true"> · </span>
-        <a href={CONTRIBUTING_URL}>阅读参与指南</a>
+          <a href={contributingUrl(locale)}>{t('footerGuide')}</a>
         <span aria-hidden="true"> · </span>
-        <Link to="/year">{CURRENT_YEAR} 编年史</Link>
+          <Link to="/year">{t('yearEntryLink', {year: CURRENT_YEAR})}</Link>
         <span aria-hidden="true"> · </span>
         <Link to="/">How Are You</Link>
       </p>
-      <p className="footer-note">路过的人会读到。你并不孤单。</p>
+        <p className="footer-note">{t('footerNote')}</p>
     </footer>
   )
 }

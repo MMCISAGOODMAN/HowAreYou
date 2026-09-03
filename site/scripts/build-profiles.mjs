@@ -1,7 +1,15 @@
-import { execFileSync } from 'node:child_process'
-import { mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs'
-import { dirname, join } from 'node:path'
-import { fileURLToPath } from 'node:url'
+/*
+ * build-profiles.mjs
+ *
+ * Created on 2026-09-03
+ *
+ * Copyright (C) 2026 Volkswagen AG, All rights reserved.
+ */
+
+import {execFileSync} from 'node:child_process'
+import {mkdirSync, readdirSync, readFileSync, writeFileSync} from 'node:fs'
+import {dirname, join} from 'node:path'
+import {fileURLToPath} from 'node:url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const repoRoot = join(__dirname, '../..')
@@ -11,20 +19,38 @@ const outFile = join(__dirname, '../src/data/profiles.json')
 const CURRENT_YEAR = 2026
 
 function sectionKey(heading) {
-  if (/我是/.test(heading)) return 'headline'
-  if (/入行时间/.test(heading)) return 'startedAt'
-  if (/当前状态/.test(heading)) return 'current'
-  if (/业余/.test(heading)) return 'side'
-  if (/小成就/.test(heading)) return 'achievement'
-  if (/小困惑/.test(heading)) return 'struggle'
-  if (/想对路过/.test(heading)) return 'message'
-  if (/彩蛋/.test(heading)) return 'easterEgg'
-  return null
+    const h = heading.replace(/^[^\w\u4e00-\u9fff]+/, '').trim()
+    if (/我是|I am\b|^About\b/i.test(h)) {
+        return 'headline'
+    }
+    if (/入行时间|Started|Start year|Year (I )?started/i.test(h)) {
+        return 'startedAt'
+    }
+    if (/当前状态|Current status|Right now/i.test(h)) {
+        return 'current'
+    }
+    if (/业余|Side projects|After hours/i.test(h)) {
+        return 'side'
+    }
+    if (/小成就|small (win|achievement)|Recent win/i.test(h)) {
+        return 'achievement'
+    }
+    if (/小困惑|stuck|Recent struggle/i.test(h)) {
+        return 'struggle'
+    }
+    if (/想对路过|passers-by|Note for|Message to/i.test(h)) {
+        return 'message'
+    }
+    if (/彩蛋|Easter egg/i.test(h)) {
+        return 'easterEgg'
+    }
+    return null
 }
 
 function clean(text) {
   return text
     .replace(/^>\s*示例：.*$/gm, '')
+    .replace(/^>\s*Example:.*$/gim, '')
     .replace(/^>\s*$/gm, '')
     .replace(/^\s*\[[^\]]+\]\s*$/gm, '')
     .replace(/^---\s*$/gm, '')
