@@ -82,15 +82,19 @@
 
 ## 写下状态的人
 
-名字会出现在这里。现在还空着——下一个，可以是你。
-
-`profiles/` 里目前有两份氛围示例（`@cors-afternoon`、`@three-months`），方便展示页先有卡片。它们不算正式贡献者名单，随时可以删。
-
-<!-- 贡献者名单将随 profiles/ 增长自动补全 -->
-
+<!-- contributors:start -->
 <p align="center">
-  <sub>还没有人。这很好：说明你来得正好。</sub>
+  <a href="https://github.com/MMCISAGOODMAN" title="@MMCISAGOODMAN"><img src="https://avatars.githubusercontent.com/MMCISAGOODMAN?s=96" width="48" height="48" alt="@MMCISAGOODMAN" /></a>
 </p>
+<p align="center">
+  [@MMCISAGOODMAN](https://github.com/MMCISAGOODMAN)
+</p>
+<p align="center">
+  <sub>氛围示例（可删）：@cors-afternoon · @three-months</sub>
+</p>
+<!-- contributors:end -->
+
+下一个，也可以是你。
 
 ---
 
