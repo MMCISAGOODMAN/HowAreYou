@@ -18,6 +18,7 @@ export type Profile = {
   }
   updatedYears: number[]
   sawCount: number
+  sawIssueUrl: string | null
 }
 
 export type FilterId =

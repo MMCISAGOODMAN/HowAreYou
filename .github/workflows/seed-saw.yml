@@ -1,0 +1,64 @@
+name: Seed saw issues
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'profiles/**'
+      - '.github/workflows/seed-saw.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  seed:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs')
+            const owner = context.repo.owner
+            const repo = context.repo.repo
+            const site = `https://${owner}.github.io/${repo}/`
+
+            const labels = await github.rest.issues.listLabelsForRepo({ owner, repo, per_page: 100 })
+            if (!labels.data.some((l) => l.name === 'saw')) {
+              await github.rest.issues.createLabel({
+                owner,
+                repo,
+                name: 'saw',
+                color: 'c45c26',
+                description: '看见了：路过的人用 👀 打个招呼',
+              })
+            }
+
+            const files = fs.readdirSync('profiles').filter((n) => n.startsWith('@') && n.endsWith('.md'))
+            for (const file of files) {
+              const id = file.slice(1, -3)
+              const title = `看见了 @${id}`
+              const q = `repo:${owner}/${repo} is:issue in:title ${title}`
+              const found = await github.rest.search.issuesAndPullRequests({ q })
+              if (found.data.items.some((it) => it.title === title && !it.pull_request)) {
+                console.log(`exists: ${title}`)
+                continue
+              }
+              await github.rest.issues.create({
+                owner,
+                repo,
+                title,
+                labels: ['saw'],
+                body: [
+                  `路过的人可以在下面点个 👀，让 @${id} 知道有人读到了。`,
+                  '',
+                  `- 档案：[\`profiles/@${id}.md\`](https://github.com/${owner}/${repo}/blob/master/profiles/@${id}.md)`,
+                  `- 展示页：[${site}p/${id}](${site}p/${id})`,
+                ].join('\n'),
+              })
+              console.log(`created: ${title}`)
+              // search API 有延迟，稍等再处理下一个，避免重复创建
+              await new Promise((r) => setTimeout(r, 1500))
+            }
